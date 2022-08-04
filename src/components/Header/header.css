@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  margin-bottom: 1.68rem;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.logo {
+  margin-right: 7px;
+}

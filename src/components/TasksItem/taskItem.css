@@ -1,0 +1,29 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  width: 20.4rem;
+  min-height: 3.2rem;
+  background-color: var(--input-color);
+  border-radius: 8px;
+  transition: 300ms;
+  padding: 12px 10px 14px 10px;
+  margin-bottom: 8px;
+}
+
+.task-item:hover {
+  background-color: #373a44;
+}
+
+.icon-trash {
+  margin-right: 0.625rem;
+}
+
+.task-text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--white);
+}
+
+.icon-checked {
+  margin-left: auto;
+}

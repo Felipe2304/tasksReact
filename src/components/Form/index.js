@@ -1,23 +1,25 @@
 import { useState } from "react";
 import "./form.css";
 
-export const Form = () => {
-  const [valueInput, setValue] = useState("");
+export const Form = ({ createTask }) => {
+  const [inputValue, setValue] = useState("");
 
   const getInputValue = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <form
       className="form"
       onSubmit={(event) => {
         event.preventDefault();
+        inputValue.length > 0 && createTask(inputValue);
         setValue("");
       }}
     >
       <div className="search-bar">
         <input
-          value={valueInput}
+          value={inputValue}
           onChange={getInputValue}
           type="text"
           placeholder="Digite uma tarefa"

@@ -1,0 +1,35 @@
+.progress-bar-wrapper {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.info-progress {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.text {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: 49px;
+  padding: 1px;
+}
+
+.progress {
+  width: 50%;
+  height: 6px;
+  border-radius: 49px;
+  background-color: var(--second-color);
+}

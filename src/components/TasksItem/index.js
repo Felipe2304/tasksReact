@@ -2,30 +2,23 @@ import "./taskItem.css";
 import trash from "../../assets/trash.svg";
 import checked from "../../assets/checked.svg";
 
-export const TasksItem = ({
-  title,
-  positionItem,
-  deletedItem,
-  toggle,
-  completedTask,
-}) => {
+export const TasksItem = ({ title, id, deleteTask, toggleTask, completed }) => {
+  const handleDelete = (event) => {
+    event.stopPropagation();
+    deleteTask(id);
+  };
   return (
-    <li
-      className="task-item"
-      onClick={() => {
-        toggle(positionItem);
-      }}
-    >
+    <li className="task-item" onClick={() => toggleTask(id)}>
       <img
         src={trash}
         alt="ícone de lixeira"
         className="icon-trash"
-        onClick={() => {
-          deletedItem(positionItem);
-        }}
+        onClick={handleDelete}
       />
       <p className="task-text">{title}</p>
-      {/* <img src={checked} alt="ícone checked" className="icon-checked" /> */}
+      {completed && (
+        <img src={checked} alt="ícone checked" className="icon-checked" />
+      )}
     </li>
   );
 };

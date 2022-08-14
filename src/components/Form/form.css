@@ -15,6 +15,7 @@
   font-weight: 400;
   padding-left: 0.93rem;
   outline: none;
+  margin: auto;
 }
 
 .input-search:focus {

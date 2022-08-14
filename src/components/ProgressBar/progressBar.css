@@ -1,6 +1,7 @@
 .progress-bar-wrapper {
   width: 100%;
   margin-bottom: 1.5rem;
+  padding: 1rem;
 }
 
 .info-progress {
@@ -32,4 +33,5 @@
   height: 6px;
   border-radius: 49px;
   background-color: var(--second-color);
+  transition:300ms ;
 }

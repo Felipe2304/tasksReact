@@ -10,11 +10,13 @@ const App = () => {
   const [listTasks, setListTasks] = useState([]);
 
   const create = (taskText, completed = false) => {
-    return setListTasks([
+    return  setListTasks([
       ...listTasks,
       { id: Math.random() * 999, title: taskText, completed: completed },
     ]);
+
   };
+  
 
   const deleteTask = (id) => {
     const newListFiltered = listTasks.filter((task) => task.id !== id);
@@ -33,10 +35,12 @@ const App = () => {
 
   return (
     <div className="container-app">
+      <div className="content">
+
       <Header />
       <Form createTask={create} />
 
-      {!!listTasks.length && <ProgressBar />}
+      {!!listTasks.length && <ProgressBar listTasks={listTasks}  />}
 
       <h4 className="task-all-text">Todas Tarefas</h4>
 
@@ -59,6 +63,7 @@ const App = () => {
           </ul>
         )}
       </section>
+      </div>
     </div>
   );
 };

@@ -21,14 +21,22 @@ body {
   height: 50.75rem;
   background-color: var(--first-color);
   margin: auto;
-  padding: 0 1.56rem;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .task-all-text {
   font-size: 1rem;
   font-weight: 600;
   color: var(--white);
-  margin-bottom: 4.2rem;
+  margin-bottom: 3.2rem;
+  align-self: flex-start;
+  margin-left: 1rem;
 }
 
 .task-box {
@@ -38,8 +46,20 @@ body {
 
 .list-tasks {
   width: 100%;
-  height: 7000px;
-  overflow-y: auto;
   min-height: 3.2rem;
-  max-height: 34.4rem;
+  max-height: 29rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  overflow-y: auto;
+}
+
+.list-tasks::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.list-tasks::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
 }

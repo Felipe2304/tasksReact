@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./form.css";
 
-export const Form = ({ createTask }) => {
+export const Form = ({ createTask , testCreate }) => {
   const [inputValue, setValue] = useState("");
 
   const getInputValue = (event) => {
@@ -14,6 +14,8 @@ export const Form = ({ createTask }) => {
       onSubmit={(event) => {
         event.preventDefault();
         inputValue.length > 0 && createTask(inputValue);
+
+        console.log(testCreate(inputValue))
         setValue("");
       }}
     >

@@ -15,16 +15,15 @@ const App = () => {
       localStorage.setItem(key , typeData === 'object'? JSON.stringify(data) : data)
     },
 
-    get:()=>{
+    get:(key)=>{
+      const data = localStorage.getItem(key)
+      const isObject = data?.includes('{') || data?.includes('[')
 
+      return isObject? JSON.parse(data):data
     },
 
-    remove:()=>{
-
-    }
+    remove:(key)=> localStorage.removeItem(key)
   }
-
-  storage.set('user' , {user:'felipe'})
 
   const create = (taskText, completed = false) => {
     return  setListTasks([

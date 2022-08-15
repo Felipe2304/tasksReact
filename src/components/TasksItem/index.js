@@ -7,6 +7,7 @@ export const TasksItem = ({ title, id, deleteTask, toggleTask, completed }) => {
     event.stopPropagation();
     deleteTask(id);
   };
+  
   return (
     <li className="task-item" onClick={() => toggleTask(id)}>
       <img

@@ -9,15 +9,29 @@ import { TasksItem } from "./components/TasksItem";
 const App = () => {
   const [listTasks, setListTasks] = useState([]);
 
+  const storage = {
+    set:(key , data)=>{
+      const typeData = typeof data
+      localStorage.setItem(key , typeData === 'object'? JSON.stringify(data) : data)
+    },
+
+    get:()=>{
+
+    },
+
+    remove:()=>{
+
+    }
+  }
+
+  storage.set('user' , {user:'felipe'})
+
   const create = (taskText, completed = false) => {
     return  setListTasks([
       ...listTasks,
       { id: Math.random() * 999, title: taskText, completed: completed },
     ]);
-
   };
-  
-
   const deleteTask = (id) => {
     const newListFiltered = listTasks.filter((task) => task.id !== id);
     setListTasks(newListFiltered);
@@ -32,6 +46,9 @@ const App = () => {
 
     setListTasks(listCompleted);
   };
+
+
+
 
   return (
     <div className="container-app">

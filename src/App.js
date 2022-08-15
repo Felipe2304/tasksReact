@@ -9,22 +9,6 @@ import { TasksItem } from "./components/TasksItem";
 const App = () => {
   const [listTasks, setListTasks] = useState([]);
 
-  const storage = {
-    set:(key , data)=>{
-      const typeData = typeof data
-      localStorage.setItem(key , typeData === 'object'? JSON.stringify(data) : data)
-    },
-
-    get:(key)=>{
-      const data = localStorage.getItem(key)
-      const isObject = data?.includes('{') || data?.includes('[')
-
-      return isObject? JSON.parse(data):data
-    },
-
-    remove:(key)=> localStorage.removeItem(key)
-  }
-
   const create = (taskText, completed = false) => {
     return  setListTasks([
       ...listTasks,
@@ -45,9 +29,6 @@ const App = () => {
 
     setListTasks(listCompleted);
   };
-
-
-
 
   return (
     <div className="container-app">
